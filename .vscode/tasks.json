@@ -17,7 +17,7 @@
             "problemMatcher":"$gcc"
         },
         {
-            "label": "C++: Run",
+            "label": "Run a.exe",
             "type": "shell",
             "command": "a",
             "args":[],
