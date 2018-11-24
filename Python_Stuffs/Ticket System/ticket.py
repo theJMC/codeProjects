@@ -23,11 +23,9 @@ current_zone = "[Blank]"
 usernames = ["James", "root", "User"]
 passwords = ["McC", "toor", "Pass"]
 
-def clear():
-    os.system('cls')
 
 def printTickets(typeOfTicket, tube):
-    clear()
+    ref.clear()
     print("Ticket Options\n")
     destination = input("Destination: ")
     if tube:
@@ -64,7 +62,7 @@ def printTickets(typeOfTicket, tube):
             tickets()
         else: 
             print("Please enter a valid option")
-            clear()
+            ref.clear()
     if typeOfTicket == "1":
         returnoneWay = "One Way"
     elif typeOfTicket == "2":
@@ -83,7 +81,7 @@ def printTickets(typeOfTicket, tube):
     if option == "y" or "Y":
         print("Printing...")
         time.sleep(1)
-        clear()
+        ref.clear()
         print("---------------------------------------")
         print(mode)
         print(returnoneWay)
@@ -96,7 +94,7 @@ def printTickets(typeOfTicket, tube):
         start()
     
 def travelcard():
-    clear()
+    ref.clear()
     print("Ticket Options\n")
     Exit = False
     while Exit == False:
@@ -148,7 +146,7 @@ def travelcard():
             tickets()
         else: 
             print("Please enter a valid option")
-            clear()
+            ref.clear()
     print("")
     print("---------------------------------------")
     print("Travelcard")
@@ -169,7 +167,7 @@ def travelcard():
             print("Please Enter a correct option")
     print("Printing...")
     time.sleep(1)
-    clear()
+    ref.clear()
     print("---------------------------------------")
     print("Travelcard")
     print(Zones)
@@ -182,14 +180,14 @@ def travelcard():
     start()
 
 def tickets():
-    clear()
+    ref.clear()
     print("Ticket Menu\n")
     print("[1] Tube Tickets")
     print("[2] National Rail Tickets")
     print("[9] Exit")
     option = input("Choose an option: ")
     if option == "1":
-        clear()
+        ref.clear()
         print("Tube Ticket Menu\n")
         print("[1] One Way Tickets")
         print("[2] Return Tickets")
@@ -205,7 +203,7 @@ def tickets():
         elif option == "9":
             tickets()
     elif option == "2":
-        clear()
+        ref.clear()
         print("Train Ticket Menu\n")
         print("[1] One Way Tickets")
         print("[2] Return Tickets")
@@ -228,14 +226,14 @@ def tickets():
 
 
 def oyster():
-    clear()
+    ref.clear()
     print("Oyster Menu\n")
     print("[1] Buy Oyster Card")
     print("[2] Top Up Oyster Card")
     print("[9] Exit")
     option = input("Choose an option: ")
     if option == "1":
-        clear()
+        ref.clear()
         print("Oyster Menu\nBuying a card\n")
         cost = input("How much do you want to put on? £")
         print("Please place the card on the vailidator...")
@@ -259,7 +257,7 @@ def oyster():
         oyster()
 
 def config(current_station, current_zone):
-    clear()
+    ref.clear()
     print("Configuration\n")
     print("You are currently at " + current_station + " Station in Zone " + current_zone)
     print("\n[1] Change Station")
@@ -283,7 +281,7 @@ def config(current_station, current_zone):
 
 
 def start():
-    clear()
+    ref.clear()
     print("London Underground Tickets \n")
     print("[1] Buy Tickets")
     print("[2] Buy / Top up Oyster Card")

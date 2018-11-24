@@ -29,6 +29,7 @@ def main():
         except IndexError as e:
             rotated = 26 - rotated
             final.append(alphabet[rotated])
+        
 
     converted = ''.join(final)
     print("Output: " + converted)
