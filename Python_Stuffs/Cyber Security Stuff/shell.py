@@ -15,17 +15,23 @@ def pscan(port):
 
 def startscan():
     portsToScan = input("Max Port to scan: ")
-    with tqdm(total=str(portsToScan) + 1) as pbar:
-        try:
-            for x in range(1, int(portsToScan) + 1):
-                if pscan(x):
-                    print("Port ", x, " Is Open")
-                else:
-                    print("Port ", x, " Is Closed")
-            pbar.update(round(portsToScan + 1 / 100, 0))
-        except TypeError:
-            print("Enter a Valid Number Please")
-            startscan()
+    for i in tqdm(range(int(portsToScan) + 1)):
+        if pscan(i):
+            print("Port " + i + " is Open!")
+        else:
+            print("Port " + i + " is Closed")
+
+#    with tqdm(total=int(portsToScan) + 1) as pbar:
+#        try:
+#            for x in range(1, int(portsToScan) + 1):
+#                if pscan(x):
+#                    print("Port ", x, " Is Open")
+#                else:
+#                    print("Port ", x, " Is Closed")
+#            pbar.update(round(portsToScan + 1 / 100, 0))
+#        except TypeError:
+#            print("Enter a Valid Number Please")
+#            startscan()
 
 
 if __name__ == "__main__":
