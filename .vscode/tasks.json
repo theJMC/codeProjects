@@ -4,27 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C++: Run",
-            "type": "shell",
-            "command": "g++",
-            "args":[
-                "-g", "${file}"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher":"$gcc"
-        },
-        {
-            "label": "Run a.exe",
-            "type": "shell",
-            "command": "a",
-            "args":[],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-        }   
+            "label": "Run Python",
+            "command": "C:\\Users\\legoj\\AppData\\Local\\Programs\\Python\\Python37-32",
+            "args": ["app.py"],
+            "problemMatcher": {
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*)+s$",
+                    "message": 1
+                }
+            }
+        }
     ]
 }
