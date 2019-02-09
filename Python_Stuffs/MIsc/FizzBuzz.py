@@ -20,7 +20,7 @@ def main():
             if i % multiple1 == 0 and i % multiple2 == 0:
                 rand = random.randint(1, len(statesOfUSA) - 1)
                 rand2 = random.randint(1, len(jamesBondFilms) - 1)
-                print(statesOfUSA.pop(rand) + jamesBondFilms.pop(rand2))
+                print(statesOfUSA.pop(rand) + " " + jamesBondFilms.pop(rand2))
             elif i % multiple1 == 0:
                 rand = random.randint(1, len(statesOfUSA) - 1)
                 print(statesOfUSA.pop(rand))
