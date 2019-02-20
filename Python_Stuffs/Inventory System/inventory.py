@@ -91,9 +91,31 @@ def deleteStock():
 
 def lookUp():
     itemToLookUp = input("Please enter the name or ID of an item > ")
+    try: 
+        itemToLookUp = int(itemToLookUp)
+    except TypeError:
+        itemToLookUp = str(itemToLookUp)
     if itemToLookUp == int:
         try:
-            
+            print("Name: " + stock[itemToLookUp].name)
+            print("ID: " + stock[itemToLookUp].ID)
+            print("Location: " + stock[itemToLookUp].location)
+        except IndexError:
+            print("That ID is not in our database!!")
+            input("Press enter to continue")
+        except ValueError:
+            print("Value Error!! [HALP MEEEEE]")
+            input("Press enter to continue")
+    elif itemToLookUp == str:
+        for i in range(len(stock)):
+            if itemToLookUp in stock[i].name:
+                print("Name: " + stock[itemToLookUp].name)
+                print("ID: " + stock[itemToLookUp].ID)
+                print("Location: " + stock[itemToLookUp].location)
+            else: 
+                print("Sorry that item is not in our database!!")
+    else:
+        print("Error in selecting Item")
 
 def reserve():
     pass
