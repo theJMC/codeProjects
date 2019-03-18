@@ -16,20 +16,9 @@ Todo:
 #import appJar
 import socket
 import sys
+import os
 
-option = sys.argv[1]
-try:
-    target_ip = sys.argv[2]
-except IndexError:
-    pass
-try:
-    target_port = sys.argv[3]
-except IndexError:
-    pass
-try:
-    end_range_port = sys.argv[4]
-except IndexError:
-    pass
+
 
 helpMessage = ("""JAM PORT SCANNER 1.0
     portScan.py [option] [target ip] [target port] [End Range Port]
@@ -38,7 +27,9 @@ Options:
     -a : Scam all ports (no target port needed)
     -s : Scan Selected Port 
     -sR : Scan Selected Port Range
-""")
+To run inside other modules:
+    import {}
+""".format(os.path.basename(__file__)))
 
 def scanPort(ip, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -62,4 +53,17 @@ def main():
         print("Option Unavailable")
     
 if __name__ == "__main__":
+    option = sys.argv[1]
+    try:
+        target_ip = sys.argv[2]
+    except IndexError:
+        pass
+    try:
+        target_port = sys.argv[3]
+    except IndexError:
+        pass
+    try:
+        end_range_port = sys.argv[4]
+    except IndexError:
+        pass
     main()
