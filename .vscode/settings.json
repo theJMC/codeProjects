@@ -35,5 +35,8 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp"
+    },
+    "files.exclude": {
+        "**/*.js: { \"when\": \"$(basename).ts\" }": true
     }
 }
