@@ -7,7 +7,7 @@ Author: James McCarthy
 
 Notes:
 
-Todo:
+TODO Add Routes
 
 """
 from getjson import getJson
@@ -55,8 +55,15 @@ class tube:
         stations = []
         stations_raw = getJson("https://api.tfl.gov.uk/line/" + line_ID + "/stoppoints")
         for item in stations_raw:
-            stations.append(item["commonName"])
+            stations.append(item["commonName"].replace('Underground Station', ''))
         return stations
+
+    def getRoutesOnLine(self, line_ID):
+        routes = []
+        allRoutes = getJson("https://api.tfl.gov.uk/line/" + line_ID + "/route")
+        for item in allRoutes["routeSections"]:
+            routes.append(item["name"].replace('Underground Station', ''))
+        return routes
 
     def getAllStations(self, id_select):
         stations_withDuplicates = []
@@ -71,11 +78,34 @@ class tube:
         return stations
 
     def searchAllStations(self, stationName):
-        # all_station_ids = self.getAllStations(True)
         all_station_names = self.getAllStations(False)
+        results = []
         for item in all_station_names:
-            if stationName.lower() in item.lower():
-                print(item)
+            if stationName.lower() in item.lower() or stationName.lower() == item.lower():
+                results.append(item)
+        return results
+
+    def convertIDtoName(self, id_num):
+        all_station_names = self.getAllStations(False)
+        all_station_ids = self.getAllStations(True)
+        results = []
+        for i in range(len(all_station_ids)):
+            if id_num == all_station_ids[i]:
+                results.append(all_station_names[i])
+        return results
+
+    def convertNametoID(self, name):
+        all_station_names = self.getAllStations(False)
+        all_station_ids = self.getAllStations(True)
+        results = []
+        for i in range(len(all_station_names)):
+            if name.lower() in all_station_names[i].lower() or name.lower() == all_station_names[i].lower():
+                results.append(all_station_ids[i])
+        return results
+    
+    def fares(self, origin_id, dest_id):
+        pass
+
 
 class rail:
 
@@ -105,4 +135,4 @@ class rail:
 
 if __name__ == "__main__":
     t = tube()
-    t.searchAllStations("Baker Street ")
+    print(t.convertIDtoName("940GZZLUKSX"))
