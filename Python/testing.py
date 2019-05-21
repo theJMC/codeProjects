@@ -1,29 +1,12 @@
-"""
-# Creates an SQL connection to the employee.db file
-conn = sqlite3.connect('employee.db')
-# Creates a cursor for the created database
-c = conn.cursor()
 
+attempt = 0
+while attempt < 3:
+    code = input("Please enter the product code: > ")
+    if code == "abcdef":
+        print("Grey Socks")
+        break
+    else:
+        print("Product Code Incorrect")
+        attempt += 1
 
-url = ""
-
-import requests
-# Gets the JSON code off of the website
-jsonData = requests.get(url)
-# Converts the JSON into a Python list (array)
-dataArray = jsonData.json()
-
-
-userInput = input("What is your favourite number?")
-try:
-    total += int(userInput)
-except TypeError:
-    print("You did not enter a number!")
-
-
-print("Lines should not exceed 79 characters long ")
-
-import math
-aNumber = math.factorial(5)
-
-"""
+        
