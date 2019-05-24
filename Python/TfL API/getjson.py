@@ -13,7 +13,12 @@ Todo:
 import json
 import requests
 
-def getJson(url):
+def getJsonFromURL(url):
     json = requests.get(url)
     data = json.json()
     return data
+
+def getJsonFromFile(location):
+    with open(str(location), "r") as file:
+        data = file.json()
+        return data
