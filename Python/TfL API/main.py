@@ -47,7 +47,11 @@ def station():
     print("\n[1]: View All Stations \n[2]: View Stations on a line\n[3]: Convert ID to Name\n[4]: Convert Name to ID\n[9]: Sync\n[0]: Back")
     option = input("Please select an option > ")
     if option == "1":
+        stations = []
         for item in tube_data.getAllStations(False):
+            stations.append(item)
+        stations.sort()
+        for item in stations:
             print(item)
         input("\n\nPress enter to continue")
     elif option == "2":
