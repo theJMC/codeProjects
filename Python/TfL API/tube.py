@@ -10,7 +10,7 @@ Notes:
 TODO Add Routes
 
 """
-from getjson import getJson
+from getjson import getJsonFromURL as getJson
 from columnar import columnar
 from datetime import datetime
 
