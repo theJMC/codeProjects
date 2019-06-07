@@ -7,10 +7,10 @@ Author: James McCarthy
 
 Notes:
 
-TODO Add Routes
+TODO Add Routes 
 
-"""
-from getjson import getJsonFromURL as getJson
+""" 
+from getjson import getJsonFromURL
 from columnar import columnar
 from datetime import datetime
 
@@ -20,9 +20,9 @@ class tube:
         self.update()
 
     def update(self):
-        self.tube_status = getJson("https://api.tfl.gov.uk/line/mode/tube/status")
-        self.dlr_status = getJson("https://api.tfl.gov.uk/line/mode/dlr/status")
-        self.lines_data = getJson("https://api.tfl.gov.uk/line/mode/tube")
+        self.tube_status = getJsonFromURL("https://api.tfl.gov.uk/line/mode/tube/status")
+        self.dlr_status = getJsonFromURL("https://api.tfl.gov.uk/line/mode/dlr/status")
+        self.lines_data = getJsonFromURL("https://api.tfl.gov.uk/line/mode/tube")
         self.updated = datetime.now().strftime("%d-%m-%Y %H:%M")
 
     def getTube(self):
@@ -53,14 +53,14 @@ class tube:
 
     def getStationsOnLine(self, line_ID):
         stations = []
-        stations_raw = getJson("https://api.tfl.gov.uk/line/" + line_ID + "/stoppoints")
+        stations_raw = getJsonFromURL("https://api.tfl.gov.uk/line/" + line_ID + "/stoppoints")
         for item in stations_raw:
             stations.append(item["commonName"].replace('Underground Station', ''))
         return stations
 
     def getRoutesOnLine(self, line_ID):
         routes = []
-        allRoutes = getJson("https://api.tfl.gov.uk/line/" + line_ID + "/route")
+        allRoutes = getJsonFromURL("https://api.tfl.gov.uk/line/" + line_ID + "/route")
         for item in allRoutes["routeSections"]:
             routes.append(item["name"].replace('Underground Station', ''))
         return routes
@@ -68,7 +68,7 @@ class tube:
     def getAllStations(self, id_select):
         stations_withDuplicates = []
         for item in self.getLines(True):
-            stations_raw = getJson("https://api.tfl.gov.uk/line/" + item + "/stoppoints")
+            stations_raw = getJsonFromURL("https://api.tfl.gov.uk/line/" + item + "/stoppoints")
             for item in stations_raw:
                 if id_select:
                     stations_withDuplicates.append(item["id"])
@@ -113,13 +113,13 @@ class rail:
         self.update()
 
     def update(self):
-        self.tube_status = getJson("https://api.tfl.gov.uk/line/mode/tube/status")
-        self.dlr_status = getJson("https://api.tfl.gov.uk/line/mode/dlr/status")
-        self.lines_data = getJson("https://api.tfl.gov.uk/line/mode/tube")
+        self.tube_status = getJsonFromURL("https://api.tfl.gov.uk/line/mode/tube/status")
+        self.dlr_status = getJsonFromURL("https://api.tfl.gov.uk/line/mode/dlr/status")
+        self.lines_data = getJsonFromURL("https://api.tfl.gov.uk/line/mode/tube")
         self.updated = datetime.now().strftime("%d-%m-%Y %H:%M")
 
     def getRail(self):
-        rail_status = getJson("https://api.tfl.gov.uk/line/mode/national-rail/status")
+        rail_status = getJsonFromURL("https://api.tfl.gov.uk/line/mode/national-rail/status")
         headers = ["Line", "Status", "Issues"]
         data = []
         for item in rail_status:
