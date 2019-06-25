@@ -27,7 +27,7 @@ class tube:
 
     def getTube(self):
         print("\n")
-        headers = ["Line", "Status", "Issues"]
+        # headers = ["Line", "Status", "Issues"]
         data = []
         for item in self.tube_status:
             if item["lineStatuses"][0]["statusSeverityDescription"] != "Good Service":
@@ -38,8 +38,9 @@ class tube:
             data.append([self.dlr_status[0]["name"], self.dlr_status[0]["lineStatuses"][0]["statusSeverityDescription"], self.dlr_status[0]["lineStatuses"][0]["reason"]])
         else:
             data.append([self.dlr_status[0]["name"], self.dlr_status[0]["lineStatuses"][0]["statusSeverityDescription"], "N/a"])
-        table = "Last Updated: " + self.updated + "\n" + columnar(data, headers)
-        return table
+        # table = "Last Updated: " + self.updated + "\n" + columnar(data, headers)
+        # return table
+        return data
 
     def getLines(self, id_select):
         lines = []
@@ -135,4 +136,4 @@ class rail:
 
 if __name__ == "__main__":
     t = tube()
-    print(t.convertIDtoName("940GZZLUKSX"))
+    print(t.getTube())
