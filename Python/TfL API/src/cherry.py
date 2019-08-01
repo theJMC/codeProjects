@@ -98,14 +98,20 @@ class tube_app(object):
         station_list = []
         line_names = t.getLines(False)
         line_ids = t.getLines(True)
-        print(line_names)
         if line != "all":
-            id_num = line_names.index(line.capitalize())
-            line_id = line_ids[id_num]
-            station_list = t.getStationsOnLine(line_id)
+            if line.lower() != "dlr":
+                print("--------------------------------------------NON-DLR------------------------------------")
+                id_num = line_names.index(line.title())
+                line_id = line_ids[id_num]
+                station_list = t.getStationsOnLine(line_id)
+            else:
+                print("--------------------------------------------DLR------------------------------------")
+                station_list = t.getDlrStations()
+                print(station_list)
         else:
             station_list = t.getAllStations(False)
         station_result = []
+        
         for item in station_list:
             station_result.append("<tr><td>" + item + "</td></tr>")
         return str(page).format(''.join(result), line_title, ''.join(station_result))

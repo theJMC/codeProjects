@@ -47,9 +47,11 @@ class tube:
         if id_select:
             for item in self.lines_data:
                 lines.append(item["id"])
+            lines.append("dlr")
         else:
             for item in self.lines_data:
                 lines.append(item["name"])
+            lines.append("DLR")
         return lines
 
     def getStationsOnLine(self, line_ID):
@@ -74,8 +76,17 @@ class tube:
                 if id_select:
                     stations_withDuplicates.append(item["id"])
                 else:
-                    stations_withDuplicates.append(item["commonName"].replace('Underground Station', ''))
+                    temp = item["commonName"].replace('Underground Station', '')
+                    temp = temp.replace('DLR Station', '')
+                    stations_withDuplicates.append(temp)
         stations = list(dict.fromkeys(stations_withDuplicates))
+        return stations
+
+    def getDlrStations(self):
+        stations_raw = getJsonFromURL("https://api.tfl.gov.uk/line/dlr/stoppoints")
+        stations = []
+        for item in stations_raw:
+            stations.append(item["commonName"].replace(' DLR Station', ''))
         return stations
 
     def searchAllStations(self, stationName):
