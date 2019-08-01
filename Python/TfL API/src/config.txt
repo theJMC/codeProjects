@@ -1,0 +1,7 @@
+[global]
+server.socket_host: '0.0.0.0'
+
+[/style.css]
+tools.staticfile.on = True
+tools.staticfile.filename = "./style.css"
+
