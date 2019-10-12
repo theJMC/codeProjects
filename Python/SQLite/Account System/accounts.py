@@ -96,3 +96,17 @@ class database():
         for item in raw_tables:
             tables.append(item[0])
         return tables, 200
+
+    def getAllFromTable(self, table):
+        db = sqlite3.connect(self.file)
+        c = db.cursor()
+        c.execute(f"SELECT * FROM {table}")
+        result = c.fetchall()
+        return result, 200
+
+    def getHeaders(self, table):
+        db = sqlite3.connect(self.file)
+        c = db.cursor()
+        c.execute(f"PRAGMA table_info({table})")
+        headers = c.fetchall()
+        return headers, 200
