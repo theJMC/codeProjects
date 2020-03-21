@@ -1,12 +1,9 @@
-
-attempt = 0
-while attempt < 3:
-    code = input("Please enter the product code: > ")
-    if code == "abcdef":
-        print("Grey Socks")
-        break
-    else:
-        print("Product Code Incorrect")
-        attempt += 1
-
-        
+import time
+print('countdown')
+t = input("Set Timer")
+n = t - 1
+for i in range(n):
+    print(n)
+    n = n - 1
+    time.sleep(1)
+print("Lets GOOOOOOOOO!")

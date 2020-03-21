@@ -1,0 +1,8 @@
+print(chr(84), chr(72), chr(69))
+print(chr(83), chr(69), chr(67))
+print(chr(82), chr(69), chr(84))
+print(chr(72), chr(65), chr(84))
+print(chr(67), chr(79), chr(68))
+print(chr(69), chr(73), chr(83))
+print(chr(66), chr(79), chr(84))
+print(chr(84), chr(76), chr(69))

@@ -1,11 +1,11 @@
-fun main(){
+fun main() {
     var drunkScore = 0
     println("Hi, Im Kotlin! Im a machine learning algorithm to tell if people are drunk!")
     println("I will ask you a few questions to tell if you are drunk is that ok? [Y/n]")
     var answer = readLine()
-    if (answer == "y" || answer == "Y"){
+    if (answer == "y" || answer == "Y") {
         println("Ok, lets begin!")
-    } else if (answer == "n" || answer == "N"){
+    } else if (answer == "n" || answer == "N") {
         drunkScore += 1
         println("Well, were doing it anyway!")
     } else {
@@ -17,12 +17,15 @@ fun main(){
 
     println("Question 1: Whats 9 + 10?")
     answer = readLine()
-    if (answer == "19"){
+    if (answer == "19") {
         drunkScore += 0
         println("Correct!")
-    } else if (answer == "21"){
+    } else if (answer == "21") {
         drunkScore += 2
         println("Correct!!")
+    } else if (answer == "42"){
+        drunkScore -= 2
+        println("Yes, but no!")
     } else {
         drunkScore += 5
         println("Not even close!")
@@ -53,6 +56,17 @@ fun main(){
         drunkScore += 10
         println("Not even close!")
     }
+
+    println("Question 4: Whats your name?")
+    answer = readLine()
+    if (answer == "James" || answer == "james"){
+        drunkScore += 0
+        println("Correct!")
+    } else {
+        drunkScore += 10
+        println("Not even close!")
+    }
+
 
     //TODO: Add more questions
 

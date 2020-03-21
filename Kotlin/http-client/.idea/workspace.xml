@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0ba7652-5744-4432-900c-cd989eec1185" name="Default Changelist" comment="" />
+    <list default="true" id="e0ba7652-5744-4432-900c-cd989eec1185" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/OLD/accounts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/OLD/jamesDB.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/OLD/test OLD.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/OLD/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/accounts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/css/signin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/html/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/html/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/html/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/setup_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/SQLite/Account System/website.db" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/src/mingwMain/kotlin/sample/SampleMingw.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -61,7 +75,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,7 +134,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,7 +169,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -188,7 +202,7 @@
     <entry file="file://$PROJECT_DIR$/src/mingwMain/kotlin/sample/SampleMingw.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
